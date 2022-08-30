@@ -5,12 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormOneComponent } from './form-one/form-one.component';
+import { FormTwoComponent } from './form-two/form-two.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormOneComponent
+    FormOneComponent,
+    FormTwoComponent
   ],
   imports: [
     BrowserModule,
