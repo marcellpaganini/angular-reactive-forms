@@ -8,6 +8,7 @@ import { FormOneComponent } from './form-one/form-one.component';
 import { FormTwoComponent } from './form-two/form-two.component';
 import { MainFormComponent } from './main-form/main-form.component';
 import { FormThreeComponent } from './form-three/form-three.component';
+import { FormFourComponent } from './form-four/form-four.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FormThreeComponent } from './form-three/form-three.component';
     FormOneComponent,
     FormTwoComponent,
     MainFormComponent,
-    FormThreeComponent
+    FormThreeComponent,
+    FormFourComponent
   ],
   imports: [
     BrowserModule,
