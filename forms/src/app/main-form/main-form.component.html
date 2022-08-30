@@ -1,0 +1,19 @@
+<form [formGroup]="form">
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="formName" id="flexRadioDefault1"
+        value="Form1" formControlName="formName" (click)="onChosenForm()">
+        <label class="form-check-label" for="flexRadioDefault1">
+          Form One
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="formName" id="flexRadioDefault2"
+        value="Form2" formControlName="formName">
+        <label class="form-check-label" for="flexRadioDefault2">
+          Form Two
+        </label>
+      </div>
+</form>
+<div *ngIf="form.value.formName == 'form1'">
+    <app-form-one></app-form-one>
+</div>

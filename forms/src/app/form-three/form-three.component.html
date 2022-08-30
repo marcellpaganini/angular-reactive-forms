@@ -1,0 +1,13 @@
+<form class="row g-3">
+    <div class="col-auto">
+        <label class="control-label" for="name">Name: </label>
+    </div>
+    <div class="col-auto">
+        <input id="name" class="form-control" type="text" [formControl]="name">
+    </div>
+
+    <div class="col-auto">
+        <button class="btn btn-primary mb-3" type="button" (click)="updateName()">Update Name</button>
+    </div>
+</form>
+<p>Value: {{ name.value }}</p>
