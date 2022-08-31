@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -11,14 +11,14 @@ export class FormFiveComponent implements OnInit {
   public provinces = Object.values(Provinces);
 
   profileForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
+    firstName: new FormControl('', [Validators.required, Validators.minLength(2)]),
+    lastName: new FormControl('', [Validators.required, Validators.minLength(2)]),
     address: new FormGroup({
-      street: new FormControl(''),
+      street: new FormControl('', Validators.required),
       addressType: new FormControl(''),
-      city: new FormControl(''),
-      province: new FormControl(''),
-      postalCode: new FormControl(''),
+      city: new FormControl('', Validators.required),
+      province: new FormControl('', Validators.required),
+      postalCode: new FormControl('', [Validators.required, Validators.pattern('^(?=[^DdFfIiOoQqUu\\d\\s])[A-Za-z]\\d(?=[^DdFfIiOoQqUu\\d\\s])[A-Za-z]\\s{0,1}\\d(?=[^DdFfIiOoQqUu\\d\\s])[A-Za-z]\\d$')]),
     })
   });
 
@@ -40,6 +40,14 @@ export class FormFiveComponent implements OnInit {
       }
     });
   }
+
+  get firstName() { return this.profileForm.get('firstName'); }
+  get lastName() { return this.profileForm.get('lastName'); }
+  get street() { return this.profileForm.controls.address.get('street'); }
+  get city() { return this.profileForm.controls.address.get('city'); }
+  get province() { return this.profileForm.controls.address.get('province'); }
+  get postalCode() { return this.profileForm.controls.address.get('postalCode'); }
+
 }
 
 enum Provinces {
