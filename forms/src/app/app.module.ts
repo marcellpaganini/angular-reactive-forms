@@ -10,6 +10,9 @@ import { MainFormComponent } from './main-form/main-form.component';
 import { FormThreeComponent } from './form-three/form-three.component';
 import { FormFourComponent } from './form-four/form-four.component';
 import { FormFiveComponent } from './form-five/form-five.component';
+import { FormSixComponent } from './form-six/form-six.component';
+import { DynamicFormQuestionComponent } from './dynamic-form-question/dynamic-form-question.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { FormFiveComponent } from './form-five/form-five.component';
     MainFormComponent,
     FormThreeComponent,
     FormFourComponent,
-    FormFiveComponent
+    FormFiveComponent,
+    FormSixComponent,
+    DynamicFormQuestionComponent,
+    DynamicFormComponent
   ],
   imports: [
     BrowserModule,
